@@ -14,7 +14,7 @@ ort --debug --stacktrace analyze -i . -o ./analyzer-output --allow-dynamic-versi
 ort scan -i ./analyzer-output/analyzer-result.yml -o ./scanner-output --scopes dependencies
 
 # Run the evaluator
-ort evaluate --rules-file ../oss-review-toolkit/docs/examples/rules.kts -i ./scanner-output/scan-result.yml -o ./evaluator-output/mime-types
+ort evaluate --rules-file ~/oss-review-toolkit/docs/examples/rules.kts -i ./scanner-output/scan-result.yml -o ./evaluator-output/mime-types
 
 # Generate a report
 ort report -f NoticeByPackage,StaticHtml,WebApp -i ./evaluator-output/evaluation-result.yml -o ./reporter-output
