@@ -1,8 +1,16 @@
+#!/bin/bash
+
+# Import workspace into JupyterLab.
+jupyter lab workspaces import binder/workspace.json
+
+# Install JupyterLab support for voila.
 jupyter labextension install @jupyter-voila/jupyterlab-preview
 
+# Install ORT.
 git clone https://github.com/heremaps/oss-review-toolkit.git
 cd oss-review-toolkit
 ./gradlew installDist
 ./cli/build/install/ort/bin/ort --version
 
+# Add ORT bin directory to search path.
 export PATH=~/oss-review-toolkit/cli/build/install/ort/bin:$PATH
