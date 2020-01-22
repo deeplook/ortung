@@ -1,3 +1,5 @@
+#!/bin/env bash
+
 # Run example ORT scan on https://github.com/jshttp/mime-types.git
 
 export PATH=~/oss-review-toolkit/cli/build/install/ort/bin/:$PATH
@@ -6,15 +8,21 @@ export PATH=~/oss-review-toolkit/cli/build/install/ort/bin/:$PATH
 git clone https://github.com/jshttp/mime-types.git
 cd mime-types
 git checkout 2.1.18
+cd ..
 
 # Run the analyzer. Be aware that the ./analyzer-output directory must not exist.
-ort --debug --stacktrace analyze -i . -o ./analyzer-output --allow-dynamic-versions # -f JSON
+ort --debug --stacktrace analyze \
+    -i mime-types -o mime-types-ort/analyzer --allow-dynamic-versions
 
 # Run the scanner
-ort scan -i ./analyzer-output/analyzer-result.yml -o ./scanner-output --scopes dependencies
+ort --debug --stacktrace scan \
+    -i mime-types-ort/analyzer/analyzer-result.yml -o mime-types-ort/scanner \
+    --scopes dependencies
 
 # Run the evaluator
-ort evaluate --rules-file ~/oss-review-toolkit/docs/examples/rules.kts -i ./scanner-output/scan-result.yml -o ./evaluator-output/mime-types
+ort evaluate --rules-file ~/oss-review-toolkit/docs/examples/rules.kts \
+    -i mime-types-ort/scanner/scan-result.yml -o mime-types-ort/evaluator/mime-types
 
 # Generate a report
-ort report -f NoticeByPackage,StaticHtml,WebApp -i ./evaluator-output/evaluation-result.yml -o ./reporter-output
+ort report -f NoticeByPackage,StaticHtml,WebApp \
+    -i mime-types-ort/evaluator/evaluation-result.yml -o mime-types-ort/reporter
