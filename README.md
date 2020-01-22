@@ -22,4 +22,14 @@ TERM = xterm
 JAVA_HOME = /srv/conda/envs/notebook
 ```
 
+You can run the sample scan on the [mime-types](https://www.npmjs.com/package/mime-types) NPM package mentioned in the ORT 
+[Getting Started section](https://github.com/heremaps/oss-review-toolkit/blob/master/docs/getting-started.md)
+as follows:
+
+```bash
+$ cd ~/tmp
+./scan_mime_types.sh
+[...]
+```
+
 More to come...
