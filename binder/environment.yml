@@ -1,4 +1,4 @@
-name: xyzhub
+name: ortung
 channels:
   - conda-forge
 dependencies:
@@ -6,4 +6,4 @@ dependencies:
   - openjdk=11.0.1
   - maven=3.6.0
   - voila
-  
+  - pip
