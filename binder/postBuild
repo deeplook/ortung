@@ -1,0 +1,3 @@
+git clone https://github.com/heremaps/oss-review-toolkit.git
+cd oss-review-toolkit
+./gradlew installDist
