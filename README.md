@@ -1,6 +1,6 @@
 # Ortung
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/deeplook/ortung/master) 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/deeplook/ortung/master?urlpath=lab) 
 
 This repo is supposed to be used as an online interface to the
 [OSS Review Toolkit](https://github.com/heremaps/oss-review-toolkit) (ORT) online.
