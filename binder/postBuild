@@ -7,8 +7,7 @@ jupyter lab workspaces import binder/workspace.json
 jupyter labextension install @jupyter-voila/jupyterlab-preview
 
 # Install ORT.
-# Temporarily disabled for suspicious build/launch errors.
-# git clone https://github.com/heremaps/oss-review-toolkit.git
-# cd oss-review-toolkit
-# ./gradlew installDist
-# ./cli/build/install/ort/bin/ort --version
+git clone https://github.com/heremaps/oss-review-toolkit.git
+cd oss-review-toolkit
+./gradlew installDist
+./cli/build/install/ort/bin/ort --version
