@@ -2,10 +2,11 @@
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/deeplook/ortung/master?urlpath=lab) 
 
-This repo is supposed to be used as an online interface to the
+This repo can be used as an online interface to the
 [OSS Review Toolkit](https://github.com/heremaps/oss-review-toolkit) (ORT) online.
-It's name should give a sense of "law and order" as often associated with the German
-word "Achtung!" It is somewhat inspired by http://ortaas.org.
+The name *Ortung* should give a sense of "law and order" as often associated with the German
+word "Achtung!" The idea is somewhat inspired by http://ortaas.org, but will hopefully provide
+a more fine-grained interface at some time.
 
 ## Preliminary Test
 
@@ -28,7 +29,7 @@ as follows:
 
 ```bash
 $ cd ~/tmp
-./scan_mime_types.sh
+bash scan_mime_types.sh
 [...]
 ```
 
