@@ -2,3 +2,5 @@
 
 # Add ORT bin directory to search path.
 export PATH=~/oss-review-toolkit/cli/build/install/ort/bin:$PATH
+
+exec "$@"
