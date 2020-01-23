@@ -11,6 +11,3 @@ git clone https://github.com/heremaps/oss-review-toolkit.git
 cd oss-review-toolkit
 ./gradlew installDist
 ./cli/build/install/ort/bin/ort --version
-
-# Add ORT bin directory to search path.
-export PATH=~/oss-review-toolkit/cli/build/install/ort/bin:$PATH
