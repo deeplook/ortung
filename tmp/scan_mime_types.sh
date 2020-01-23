@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/bin/bash
 
 # Run example ORT scan on https://github.com/jshttp/mime-types.git
 
