@@ -29,7 +29,7 @@ as follows:
 
 ```bash
 $ cd ~/tmp
-bash scan_mime_types.sh
+$ bash scan_mime_types.sh
 [...]
 ```
 
