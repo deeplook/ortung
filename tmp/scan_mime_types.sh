@@ -2,8 +2,6 @@
 
 # Run example ORT scan on https://github.com/jshttp/mime-types.git
 
-export PATH=~/oss-review-toolkit/cli/build/install/ort/bin/:$PATH
-
 # Download package
 git clone https://github.com/jshttp/mime-types.git
 cd mime-types
@@ -21,8 +19,11 @@ ort --debug --stacktrace scan \
 
 # Run the evaluator
 ort evaluate --rules-file ~/oss-review-toolkit/docs/examples/rules.kts \
-    -i mime-types-ort/scanner/scan-result.yml -o mime-types-ort/evaluator/mime-types
+    --license-configuration-file ~/oss-review-toolkit/docs/examples/licenses.yml \
+    -i mime-types-ort/scanner/scan-result.yml -o mime-types-ort/evaluator
 
 # Generate a report
 ort report -f NoticeByPackage,StaticHtml,WebApp \
     -i mime-types-ort/evaluator/evaluation-result.yml -o mime-types-ort/reporter
+
+echo "Please check mime-types-ort/reporter/scan-report.html"
