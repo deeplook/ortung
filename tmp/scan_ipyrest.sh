@@ -4,8 +4,6 @@
 
 # Download package
 git clone https://github.com/deeplook/ipyrest.git
-cd ipyrest
-cd ..
 
 # Run the analyzer. Be aware that the ./analyzer-output directory must not exist.
 # needs pip install virtualenv
