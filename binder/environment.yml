@@ -12,4 +12,5 @@ dependencies:
   - pyyaml
   - pip
   - pip:
+    - halo
     - virtualenv
