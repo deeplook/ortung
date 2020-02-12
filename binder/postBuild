@@ -3,6 +3,9 @@
 # Import workspace into JupyterLab.
 jupyter lab workspaces import binder/workspace.json
 
+# Install JupyterLab widgets/manager.
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
+
 # Install JupyterLab support for voila.
 jupyter labextension install @jupyter-voila/jupyterlab-preview
 
