@@ -2,11 +2,27 @@
 Building blocks for an emerging Ortung...
 """
 
+import re
 import os
 import shutil
 import tempfile
 import subprocess
+from urllib.parse import urlparse
 from os.path import exists, join, dirname
+
+
+def parse_repo_url(url):
+    """Parse a full repo URL into various bits...
+
+    >>> parse_repo_url("https://github.com/jshttp/mime-types.git")
+    {"source": "github.com", owner": "jshttp", "name": "mime-types"}
+    """
+    source, owner, name = None, None, None
+    source = urlparse(url).netloc
+    if re.match("http[s]\://.*\.git", url):
+        owner, name = url[:-4].split("/")[-2:]
+
+    return dict(source=source, owner=owner, name=name)
 
 
 def clone_repo(url, branch=None, dest_dir=None):
