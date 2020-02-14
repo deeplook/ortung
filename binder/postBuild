@@ -3,6 +3,11 @@
 # Import workspace into JupyterLab.
 jupyter lab workspaces import binder/workspace.json
 
+# qgrid
+jupyter nbextension enable --py --sys-prefix qgrid
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
+jupyter labextension install qgrid2
+
 # Install JupyterLab widgets/manager.
 jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
