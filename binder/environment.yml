@@ -11,6 +11,8 @@ dependencies:
   - ipyvuetify
   - voila
   - pyyaml
+  - matplotlib
+  - seaborn
   - pip
   - pip:
     - halo
