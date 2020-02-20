@@ -10,6 +10,12 @@ import subprocess
 from urllib.parse import urlparse
 from os.path import exists, join, dirname
 
+try:
+    subprocess.check_output(["which", "ort"])
+    HAVE_ORT = True
+except subprocess.CalledProcessError:
+    HAVE_ORT = False
+
 
 def parse_repo_url(url):
     """Parse a full repo URL into various bits...
