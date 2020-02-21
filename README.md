@@ -8,6 +8,8 @@ The name *Ortung* should give a sense of "law and order" as often associated wit
 word "Achtung!" The idea is somewhat inspired by http://ortaas.org, but will hopefully provide
 a more fine-grained interface at some time.
 
+![ORT clone and analyze](images/ort_clone_analyze.gif)
+
 ## Preliminary Test
 
 ```bash
