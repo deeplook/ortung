@@ -8,6 +8,15 @@ cd mime-types
 git checkout 2.1.18
 cd ..
 
+# Create a (now mandatory) ORT config file.
+cat > mime-types/.ort.yml <<EOL
+excludes:
+  scopes:
+  - pattern: "devDependencies"
+    reason: "DEV_DEPENDENCY_OF"
+    comment: "Packages for development only."
+EOL
+
 # Run the analyzer. Be aware that the ./analyzer-output directory must not exist.
 ort --debug --stacktrace analyze \
     -i mime-types -o mime-types-ort/analyzer --allow-dynamic-versions
@@ -15,7 +24,7 @@ ort --debug --stacktrace analyze \
 # Run the scanner
 ort --debug --stacktrace scan \
     -i mime-types-ort/analyzer/analyzer-result.yml -o mime-types-ort/scanner \
-    --scopes dependencies
+    --skip-excluded # --scopes dependencies
 
 # Run the evaluator
 ort evaluate --rules-file ~/oss-review-toolkit/docs/examples/rules.kts \
